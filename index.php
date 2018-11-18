@@ -12,5 +12,7 @@ $result = preg_match ($pattern, $string);
 var_dump ($result);
 
 echo $string;
+
+echo $pattern;
 ?>
 
