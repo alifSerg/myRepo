@@ -1,38 +1,21 @@
 <?php
-// regular expressions
-// preg_match, preg_replace
-/*
-$string = "ученик сидит за партой";
-$pattern = "/ученик/";
 
-$result = preg_match ($pattern, $string);
+// FRONT COTROLLER
 
-//preg_match ищет совпадения,принимает 2 параметра, возвращает true/false
+// 1. Общие настройки
 
-var_dump ($result);
-*/
-//так же можно использовать для поиска соответствий числел в диапазонах. в этом примере ищет совпадение 4го числа /200[0-5]/
-//или 200[1,2,3,4,5], ищет такие выражения 2001, 2002, 2003, 2004, 2005.
-/*
-$string = "2000, 2002";
-$pattern = "/200[0-5]/";
+ini_set('display_errors', 1); //распознавание ошибок на этапе разработки
+error_reporting(E_ALL);
+
+// 2. Подключение файлов системы
+
+define('ROOT', dirname(__FILE__));
+require_once(ROOT.'/components/Router.php'); //подключение файла
+
+// 3. Установка соединения с БД
 
 
-$result = preg_match ($pattern, $string);
+// 4. Вызор Router
 
-var_dump ($result);
-*/
-// quantificator
-//такая запись означает что ищутся 2 символа или группа символов в заданной строке /p{2}/
-//эта запись означает что поиск будет от 2 до 8 симолов в заданной строке /p(2,8)/
-// означает поиск одного или более символов /p(1,)/
-//будет искать двузначные числа в диапазоне от 1 до 2х /[0-9](1,2)/
-$string = "apples and oranges";
-$pattern = "/p{2}/";
-
-$result = preg_match ($pattern, $string);
-
-var_dump ($result);
-
-?>
-
+$router = new Router();
+$router->run();
