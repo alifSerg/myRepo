@@ -53,7 +53,8 @@ if (file_exists($controllerFile)) {
 }
 //создать объект, вызвать метод (action)
 $controllerObject = new $controllerName;
-$result = $controllerObject->$actionName ();
+$result = call_user_func_array (array($controllerObject, $actionName),$parameters);
+
 if ($result !=null) {
     break;
 }

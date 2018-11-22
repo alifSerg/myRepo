@@ -1,4 +1,7 @@
 <?php
+//Информационный раздел,состоит:
+//1) Список записей
+//2) Просмотр одной записи
 
 // FRONT COTROLLER
 
@@ -19,3 +22,5 @@ require_once(ROOT.'/components/Router.php'); //подключение файла
 
 $router = new Router();
 $router->run();
+*/
+?>

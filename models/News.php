@@ -1,13 +1,9 @@
 <?php
+class News {
 public static function getNewsList() {
-    $host = "localhost";
-    $dbname = "mvc_site";
-    $user = "root";
-    $password = " ";
-    $db = new PDO ("mysqli:host;dbname=$dbname, $user, $password");
 
     $newsList = array();
-
+    $db Db::getConnection();
     $result = $db->query ("SELECT id, title, date, short_content
     . FROM news
     . ORDER BY date DESC
